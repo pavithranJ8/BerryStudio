@@ -22,7 +22,7 @@ interface MenuItemProps {
 }
 
 // Styled components
-const StyledCard = styled(Card)(({ theme }) => ({
+const StyledCard = styled(Card)(() => ({
   borderRadius: '12px',
   boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
   height: '88px',
