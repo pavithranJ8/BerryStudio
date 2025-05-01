@@ -1,8 +1,7 @@
 ## BerryStudio
-
 ## Demo
 
-[Live Demo](https://disney-movies-db-clone.vercel.app/)
+<!-- [Live Demo](https://disney-movies-db-clone.vercel.app/) -->
 
 ## Getting Started
 ```

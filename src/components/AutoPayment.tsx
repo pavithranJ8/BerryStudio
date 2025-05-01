@@ -12,7 +12,7 @@ import {
 import { styled } from '@mui/material/styles';
 // import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+// import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 // import PaymentIcon from '@mui/icons-material/Payment';
 
 const BlueCard = styled(Card)(({ theme }) => ({
