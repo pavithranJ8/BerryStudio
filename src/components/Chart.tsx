@@ -5,10 +5,7 @@ import {
   Avatar, 
   Typography, 
   Tabs, 
-  Tab, 
-  Card, 
-  CardContent, 
-  Chip, 
+  Tab,  
   List, 
   ListItem, 
   ListItemText, 
@@ -69,7 +66,7 @@ interface FinancialSummary {
 }
 
 // Styling
-const StyledTab = styled(Tab)(({ theme }) => ({
+const StyledTab = styled(Tab)(() => ({
   textTransform: 'none',
   minWidth: 72,
   fontWeight: 500,
@@ -77,13 +74,13 @@ const StyledTab = styled(Tab)(({ theme }) => ({
   padding: '12px 16px',
 }));
 
-const StyledTabs = styled(Tabs)(({ theme }) => ({
+const StyledTabs = styled(Tabs)(() => ({
   '& .MuiTabs-indicator': {
     height: 3,
   },
 }));
 
-const ActiveTab = styled(Tab)(({ theme }) => ({
+const ActiveTab = styled(Tab)(() => ({
   textTransform: 'none',
   minWidth: 72,
   fontWeight: 500,
@@ -277,8 +274,8 @@ const PatientDashboard: React.FC = () => {
             </Typography>
             <List disablePadding>
               <ListItem 
-                button 
-                selected 
+                 
+                 
                 sx={{ 
                   borderRadius: 1, 
                   mb: 1, 
@@ -302,7 +299,7 @@ const PatientDashboard: React.FC = () => {
             <List disablePadding>
               {relatedParties.map((party, index) => (
                 <ListItem 
-                  button 
+                   
                   key={index}
                   sx={{ borderRadius: 1, mb: 1 }}
                 >
@@ -326,7 +323,7 @@ const PatientDashboard: React.FC = () => {
             <List disablePadding>
               {insuranceAccounts.map((insurance, index) => (
                 <ListItem 
-                  button 
+                   
                   key={index}
                   sx={{ borderRadius: 1, mb: 1 }}
                 >

@@ -39,12 +39,12 @@ interface RelatedParty {
 
 const ledger = () => {
   const [activeTab, setActiveTab] = useState('Ledger');
-  const [activePage, setActivePage] = useState(1);
+  // const [activePage, setActivePage] = useState(1);
 
-  const handleTabChange = (event, newValue) => {
-    setActiveTab(newValue);
-    console.log(newValue,'newValue');
-  };
+  // const handleTabChange = (event, newValue) => {
+  //   setActiveTab(newValue);
+  //   console.log(newValue,'newValue');
+  // };
 
   const relatedParties: RelatedParty[] = [
     { name: "Christopher", relation: "Father" },

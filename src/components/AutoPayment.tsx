@@ -15,7 +15,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 // import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 // import PaymentIcon from '@mui/icons-material/Payment';
 
-const BlueCard = styled(Card)(({ theme }) => ({
+const BlueCard = styled(Card)(() => ({
   backgroundColor: '#4b89c0',
   color: 'white',
   borderRadius: '10px',
@@ -24,7 +24,7 @@ const BlueCard = styled(Card)(({ theme }) => ({
   overflow: 'visible'
 }));
 
-const DarkCard = styled(Card)(({ theme }) => ({
+const DarkCard = styled(Card)(() => ({
   backgroundColor: '#3c3c3c',
   color: 'white',
   borderRadius: '10px',
@@ -33,7 +33,7 @@ const DarkCard = styled(Card)(({ theme }) => ({
   overflow: 'visible'
 }));
 
-const YellowCard = styled(Card)(({ theme }) => ({
+const YellowCard = styled(Card)(() => ({
   backgroundColor: '#f0d895',
   color: 'black',
   borderRadius: '10px',
@@ -43,7 +43,7 @@ const YellowCard = styled(Card)(({ theme }) => ({
 }));
 
 // Badge component for "Active" status
-const ActiveBadge = styled(Box)(({ theme }) => ({
+const ActiveBadge = styled(Box)(() => ({
   backgroundColor: '#d8f1d8',
   color: '#2e7d32',
   padding: '2px 8px',
@@ -75,19 +75,19 @@ const DateSection = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(2)
 }));
 
-const DateBox = styled(Box)(({ theme }) => ({
+const DateBox = styled(Box)(() => ({
   display: 'flex',
   flexDirection: 'column'
 }));
 
-const DateBoxEnd = styled(Box)(({ theme }) => ({
+const DateBoxEnd = styled(Box)(() => ({
   display: 'flex',
   flexDirection: 'column',
   marginRight: '100px',
 }));
 
 
-const PaymentsFooter = styled(Box)(({ theme }) => ({
+const PaymentsFooter = styled(Box)(() => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'end',
