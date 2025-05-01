@@ -40,16 +40,16 @@ interface RelatedParty {
 const ledger = () => {
   const [activeTab, setActiveTab] = useState('Ledger');
   const [collapsed, setCollapsed] = useState(false);
-  const [autoCollapse, setAutoCollapse] = useState(false);
+  // const [autoCollapse, setAutoCollapse] = useState(false);
   // const [activePage, setActivePage] = useState(1);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1367) {
-        setAutoCollapse(true);
+        // setAutoCollapse(true);
         setCollapsed(true);
       } else {
-        setAutoCollapse(false);
+        // setAutoCollapse(false);
         setCollapsed(false);
       }
     };
