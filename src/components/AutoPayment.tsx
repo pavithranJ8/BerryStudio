@@ -276,7 +276,7 @@ const AutoPayments: React.FC = () => {
   };
 
   return (
-    <Box sx={{bgcolor: 'white', width: '976px',  height: '280px' }}>
+    <Box sx={{bgcolor: 'white', width: '956px',  height: '280px' }}>
       <Container>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', marginLeft: '2px'}}>
           <Typography variant="h6" fontWeight={600} sx={{color: '#1C1C1C', fontSize: '20px'}}>
@@ -301,7 +301,7 @@ const AutoPayments: React.FC = () => {
         </Box>
         
         <Box sx={{ position: 'relative', width:'960px', height: '184px', marginTop: '16px' }}>
-          <Grid container spacing={3}>
+          <Grid container spacing={1}>
             {subscriptions.map((subscription) => (
               <Grid key={subscription.id}>
                 {renderCard(subscription)}

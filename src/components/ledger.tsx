@@ -118,8 +118,8 @@ const ledger = () => {
         </div>
 
         <div className="space-y-4 flex-1">
-          <div className="flex flex-row py-2 ml-6 hover:text-blue-600 cursor-pointer">
-            <DashboardOutlinedIcon fontSize="small" />
+          <div className="flex flex-row py-2 ml-3 w-[202px] cursor-pointer hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px]" >
+            <DashboardOutlinedIcon fontSize="small" sx={{marginLeft: '12px'}}/>
             {!collapsed && 
             <Typography variant="caption" sx={{
               color: '#1C1C1C',
@@ -127,13 +127,13 @@ const ledger = () => {
               fontWeight: '500',
               marginLeft: '8px',
               '&:hover': {
-                color: 'blue',
+                color: '#1C1C1C',
               },
             }}>Dashboard</Typography>
           }
           </div>
-          <div className="flex flex-row py-2 ml-6 hover:text-blue-600 rounded-md cursor-pointer">
-            <PermIdentityOutlinedIcon fontSize="small" />
+          <div className="flex flex-row py-2 w-[202px] ml-3 hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px] cursor-pointer">
+            <PermIdentityOutlinedIcon fontSize="small" sx={{marginLeft: '12px'}} />
             {!collapsed && 
             <Typography variant="caption" sx={{
               color: '#1C1C1C',
@@ -141,13 +141,13 @@ const ledger = () => {
               fontWeight: '500',
               marginLeft: '8px',
               '&:hover': {
-                color: 'blue',
+                color: '#1C1C1C',
               },
             }}>Patients</Typography>
           }
           </div>
-          <div className="flex flex-row py-2 ml-6 text-gray-600 hover:text-blue-600 cursor-pointer">
-            <HealthAndSafetyOutlinedIcon fontSize="small" />
+          <div className="flex flex-row py-2 w-[202px] ml-3 text-gray-600 hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px] cursor-pointer">
+            <HealthAndSafetyOutlinedIcon fontSize="small" sx={{marginLeft: '12px'}} />
             {!collapsed && 
             <Typography variant="caption" sx={{
               color: '#1C1C1C',
@@ -155,13 +155,13 @@ const ledger = () => {
               fontWeight: '500',
               marginLeft: '8px',
               '&:hover': {
-                color: 'blue',
+                color: '#1C1C1C',
               },
             }}>Insurance</Typography>
           }
           </div>
-          <div className="flex flex-row py-2 ml-6 text-gray-600 hover:text-blue-600 cursor-pointer">
-            <TaskAltOutlinedIcon fontSize="small" />
+          <div className="flex flex-row w-[202px] py-2 ml-3 text-gray-600 hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px] cursor-pointer">
+            <TaskAltOutlinedIcon fontSize="small" sx={{marginLeft: '12px'}} />
             {!collapsed && 
             <Typography variant="caption" sx={{
               color: '#1C1C1C',
@@ -169,7 +169,7 @@ const ledger = () => {
               fontWeight: '500',
               marginLeft: '8px',
               '&:hover': {
-                color: 'blue',
+                color: '#1C1C1C',
               },
             }}>Task</Typography>
           }
@@ -253,11 +253,11 @@ const ledger = () => {
                 {tabs.map((tab) => (
                   <button
                     key={tab}
-                    className={`px-4 py-2 text-sm font-medium h-[36px] ${tab != 'Related Parties'
+                    className={`px-4  border text-sm font-medium h-[36px] ${tab != 'Related Parties'
                         ? 'ml-4'
                         : ''
                       } ${activeTab === tab
-                        ? 'text-white bg-black rounded-[20px] border-b-2 border-black'
+                        ? 'text-white bg-black rounded-[20px] border-b-2 pb-0.5 border-black'
                         : 'text-[#1C1C1C] hover:text-gray-700 bg-[#FFFFFF] rounded-[20px] border-b-2 border-[#EEEEEE]'
                       }`}
                     onClick={() => setActiveTab(tab)}
@@ -289,7 +289,7 @@ const ledger = () => {
               </div>
 
               {/* <Paper elevation={1} className="w-64 h-full"> */}
-              <div className="bg-white shrink-0 rounded-lg shadow-md p-3 h-[100%] w-[240px]">
+              <div className="bg-white shrink-0 rounded-lg shadow-md p-3 h-[100%] max-w-[240px]">
                 <Box className="p-4 border-b rounded-sm">
                   <Typography variant="subtitle2" className="uppercase mb-2" sx={{ fontSize: '12px', fontWeight: '700', color: '#8D8D8D' }}>
                     OVERVIEW
@@ -347,9 +347,9 @@ const ledger = () => {
               </div>
 
               <div className='z-[1]'>
-                <Card className="min-w-64 bg-blue-100 rounded-lg"
+                <Card className="min-w-64 max-w-[956px;] bg-blue-100 rounded-lg"
                   sx={{
-                    Width: '976px',
+                    Width: '956px',
                     borderRadius: '16px',
                     boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
                     border: '1px',
@@ -378,7 +378,7 @@ const ledger = () => {
                         <Typography variant="subtitle1" className="font-bold" sx={{ color: '#626262', fontSize: '16px', fontWeight: '600', marginLeft: '6px' }}>${(5730).toFixed(2)}</Typography>
                       </div>
                     </div>
-                    <div className='ml-2 w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
+                    <div className='w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
                       <div className='mt-4 ml-3'>
                         <div className="flex text-center ml-[6px]">
                           <div className="w-[12px] h-[12px] bg-[#FDE4E1] rounded-2xl mt-[3px] ml-[6px]"></div>
@@ -387,7 +387,7 @@ const ledger = () => {
                         <Typography variant="subtitle1" className="font-bold" sx={{ color: '#626262', fontSize: '16px', fontWeight: '600', marginLeft: '16px' }}>${(990).toFixed(2)}</Typography>
                       </div>
                     </div>
-                    <div className='ml-2 w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
+                    <div className='w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
                       <div className='mt-4 ml-3'>
                         <div className="flex text-center ml-[6px]">
                           <div className="w-[12px] h-[12px] bg-[#FFF0B8] rounded-2xl mt-[3px] ml-[6px]"></div>
@@ -396,7 +396,7 @@ const ledger = () => {
                         <Typography variant="subtitle1" className="font-bold" sx={{ color: '#626262', fontSize: '16px', fontWeight: '600', marginLeft: '16px' }}>${(300).toFixed(2)}</Typography>
                       </div>
                     </div>
-                    <div className='ml-2 w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
+                    <div className='w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
                       <div className='mt-4 ml-3'>
                         <div className="flex text-center ml-[6px]">
                           <div className="w-[12px] h-[12px] bg-[#CFE1F3] rounded-2xl mt-[3px] ml-[6px]"></div>
@@ -405,7 +405,7 @@ const ledger = () => {
                         <Typography variant="subtitle1" className="font-bold" sx={{ color: '#626262', fontSize: '16px', fontWeight: '600', marginLeft: '16px' }}>${(5040).toFixed(2)}</Typography>
                       </div>
                     </div>
-                    <div className='ml-2 w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
+                    <div className='w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
                       <div className='mt-4 ml-3'>
                         <div className="flex text-center ml-[6px]">
                           <div className="w-[12px] h-[12px] bg-[#E7DAEF] rounded-2xl mt-[3px] ml-[6px]"></div>
@@ -414,7 +414,7 @@ const ledger = () => {
                         <Typography variant="subtitle1" className="font-bold" sx={{ color: '#FF6F61', fontSize: '16px', fontWeight: '600', marginLeft: '16px' }}>${(185).toFixed(2)}</Typography>
                       </div>
                     </div>
-                    <div className='ml-2 w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
+                    <div className='w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
                       <div className='mt-4 ml-3'>
                         <div className="flex text-center ml-[6px]">
                           <div className="w-[12px] h-[12px] bg-[#FADFC5] rounded-2xl mt-[3px] ml-[6px]"></div>
@@ -431,7 +431,7 @@ const ledger = () => {
                 </Card>
 
                 {/* Auto Payments */}
-                <Card className="min-w-64 bg-blue-100 rounded-lg mt-7"
+                <Card className="min-w-64 max-w-[956px;] bg-blue-100 rounded-lg mt-7"
                   sx={{
                     Width: '976px',
                     borderRadius: '16px',
@@ -445,20 +445,20 @@ const ledger = () => {
 
                 {/* Action Cards */}
 
-                <div className="flex space-x-4 overflow-x-auto" >
+                <div className="flex space-x-4 max-w-[956px;]" >
                   <ActionCard></ActionCard>
                 </div>
 
                 {/* Ledger */}
                 <Card className="rounded-lg"
                   sx={{
-                    Width: '976px',
+                    maxWidth: '956px',
                     borderRadius: '16px',
                     boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
                     border: '1px',
                   }}>
                   <div className="mb-4 mt-4">
-                    <div className="flex justify-between items-center mb-4 w-[976px]">
+                    <div className="flex justify-between items-center mb-4 w-[912px]">
                       <Typography variant="subtitle1" sx={{
                         fontSize: '20px',
                         marginLeft: '24px',
