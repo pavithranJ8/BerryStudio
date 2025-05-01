@@ -136,7 +136,7 @@ const ledger = () => {
 
       {/* Main Content */}
 
-      <div className=" bg-gradient-to-b from-[#E0F1E1] via-[#FAFDFA] to-[#FAFAFB]">
+      <div className="flex-1 bg-gradient-to-b from-[#E0F1E1] via-[#FAFDFA] to-[#FAFAFB]">
         {/* Header */}
         <div className="h-14 w-full shadow-sm px-4 flex items-center justify-between">
           <div className="flex items-center mb-2 mt-2">
@@ -159,7 +159,7 @@ const ledger = () => {
         </div>
 
         {/* Content */}
-        <Box className="min-h-screen p-4">
+        <Box className="min-h-screen p-4 max-w-[1240px] mx-auto">
           <div className="flex-1 overflow-y-auto p-4">
             {/* Patient Header */}
             <div className="flex items-center mb-4">
