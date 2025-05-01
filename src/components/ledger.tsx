@@ -350,6 +350,7 @@ const ledger = () => {
                 <Card className="min-w-64 max-w-[956px;] bg-blue-100 rounded-lg"
                   sx={{
                     Width: '956px',
+                    height: '543px',
                     borderRadius: '16px',
                     boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
                     border: '1px',
