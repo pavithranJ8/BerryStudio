@@ -72,7 +72,7 @@ const ledger = () => {
   return (
     <div className="flex h-screen bg-[#FFFFFF]">
       {/* Sidebar */}
-      <div className="w-[248px] shrink-0 h-screen shadow-md flex flex-col">
+      <div className="w-64 shrink-0 h-screen shadow-md flex flex-col">
         <div className="mb-8 mt-4 ml-6">
 
           <Typography variant="caption" className="" sx={{
@@ -159,7 +159,7 @@ const ledger = () => {
         </div>
 
         {/* Content */}
-        <div className="min-h-screen p-4">
+        <Box className="min-h-screen p-4">
           <div className="flex-1 overflow-y-auto p-4">
             {/* Patient Header */}
             <div className="flex items-center mb-4">
@@ -205,7 +205,7 @@ const ledger = () => {
             {/* Tabs */}
 
 
-            <div className="pt-4 mt-4">
+            <div className="pt-4 mt-4 w-full">
               <div className="border-none">
                 {tabs.map((tab) => (
                   <button
@@ -224,7 +224,6 @@ const ledger = () => {
                 ))}
               </div>
             </div>
-
 
 
             {/* Account Summary Card */}
@@ -458,7 +457,7 @@ const ledger = () => {
               {/* </Paper> */}
             </Box>
           </div>
-        </div>
+        </Box>
       </div>
 
     </div>
