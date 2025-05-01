@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Table from '../components/Table'
 import AutoPayment from '../components/AutoPayment'
 import ActionCard from '../components/ActionCard'
@@ -39,7 +39,33 @@ interface RelatedParty {
 
 const ledger = () => {
   const [activeTab, setActiveTab] = useState('Ledger');
+  const [collapsed, setCollapsed] = useState(false);
+  const [autoCollapse, setAutoCollapse] = useState(false);
   // const [activePage, setActivePage] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1367) {
+        setAutoCollapse(true);
+        setCollapsed(true);
+      } else {
+        setAutoCollapse(false);
+        setCollapsed(false);
+      }
+    };
+    
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // const toggleSidebar = () => {
+  //   if (!autoCollapse) {
+  //     setCollapsed(!collapsed);
+  //   }
+  // };
 
   // const handleTabChange = (event, newValue) => {
   //   setActiveTab(newValue);
@@ -72,19 +98,29 @@ const ledger = () => {
   return (
     <div className="flex h-screen bg-[#FFFFFF]">
       {/* Sidebar */}
-      <div className="w-64 shrink-0 h-screen shadow-md flex flex-col">
+      <div className={`shrink-0 h-screen shadow-md flex flex-col  ${
+          collapsed ? 'w-16' : 'w-64'
+        }`}>
         <div className="mb-8 mt-4 ml-6">
-
+        {collapsed && 
+        <div className="h-8 w-8 ml-[-4px] bg-red-100 text-red-500 rounded-md mx-auto mb-1 flex items-center justify-center">
+            <span className="font-bold text-sm">BS</span>
+          </div>
+          }
+          
+        {!collapsed && 
           <Typography variant="caption" className="" sx={{
             color: '#171717',
             fontSize: '18px',
             fontWeight: '700'
           }}>BerryStudio</Typography>
+        }
         </div>
 
         <div className="space-y-4 flex-1">
           <div className="flex flex-row py-2 ml-6 hover:text-blue-600 cursor-pointer">
             <DashboardOutlinedIcon fontSize="small" />
+            {!collapsed && 
             <Typography variant="caption" sx={{
               color: '#1C1C1C',
               fontSize: '14px',
@@ -94,9 +130,11 @@ const ledger = () => {
                 color: 'blue',
               },
             }}>Dashboard</Typography>
+          }
           </div>
           <div className="flex flex-row py-2 ml-6 hover:text-blue-600 rounded-md cursor-pointer">
             <PermIdentityOutlinedIcon fontSize="small" />
+            {!collapsed && 
             <Typography variant="caption" sx={{
               color: '#1C1C1C',
               fontSize: '14px',
@@ -106,9 +144,11 @@ const ledger = () => {
                 color: 'blue',
               },
             }}>Patients</Typography>
+          }
           </div>
           <div className="flex flex-row py-2 ml-6 text-gray-600 hover:text-blue-600 cursor-pointer">
             <HealthAndSafetyOutlinedIcon fontSize="small" />
+            {!collapsed && 
             <Typography variant="caption" sx={{
               color: '#1C1C1C',
               fontSize: '14px',
@@ -118,9 +158,11 @@ const ledger = () => {
                 color: 'blue',
               },
             }}>Insurance</Typography>
+          }
           </div>
           <div className="flex flex-row py-2 ml-6 text-gray-600 hover:text-blue-600 cursor-pointer">
             <TaskAltOutlinedIcon fontSize="small" />
+            {!collapsed && 
             <Typography variant="caption" sx={{
               color: '#1C1C1C',
               fontSize: '14px',
@@ -130,6 +172,7 @@ const ledger = () => {
                 color: 'blue',
               },
             }}>Task</Typography>
+          }
           </div>
         </div>
       </div>
@@ -246,7 +289,7 @@ const ledger = () => {
               </div>
 
               {/* <Paper elevation={1} className="w-64 h-full"> */}
-              <div className="bg-white rounded-lg shadow-md p-3 h-[100%] w-[240px]">
+              <div className="bg-white shrink-0 rounded-lg shadow-md p-3 h-[100%] w-[240px]">
                 <Box className="p-4 border-b rounded-sm">
                   <Typography variant="subtitle2" className="uppercase mb-2" sx={{ fontSize: '12px', fontWeight: '700', color: '#8D8D8D' }}>
                     OVERVIEW

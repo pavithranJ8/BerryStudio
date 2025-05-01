@@ -276,7 +276,7 @@ const AutoPayments: React.FC = () => {
   };
 
   return (
-    <Box sx={{bgcolor: 'white', width: '996px',  height: '280px' }}>
+    <Box sx={{bgcolor: 'white', width: '976px',  height: '280px' }}>
       <Container>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', marginLeft: '2px'}}>
           <Typography variant="h6" fontWeight={600} sx={{color: '#1C1C1C', fontSize: '20px'}}>
