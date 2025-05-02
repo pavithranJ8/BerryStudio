@@ -118,7 +118,9 @@ const ledger = () => {
         </div>
 
         <div className="space-y-4 flex-1">
-          <div className="flex flex-row py-2 ml-3 w-[202px] cursor-pointer hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px]" >
+          <div className={`flex flex-row py-2 ml-3 w-[202px] cursor-pointer ${!collapsed && 
+          ' hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px]'
+        }`} >
             <DashboardOutlinedIcon fontSize="small" sx={{marginLeft: '12px'}}/>
             {!collapsed && 
             <Typography variant="caption" sx={{
@@ -132,7 +134,9 @@ const ledger = () => {
             }}>Dashboard</Typography>
           }
           </div>
-          <div className="flex flex-row py-2 w-[202px] ml-3 hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px] cursor-pointer">
+          <div className={`flex flex-row py-2 w-[202px] ml-3 ${!collapsed && 
+          ' hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px]'
+        } cursor-pointer `}>
             <PermIdentityOutlinedIcon fontSize="small" sx={{marginLeft: '12px'}} />
             {!collapsed && 
             <Typography variant="caption" sx={{
@@ -146,7 +150,9 @@ const ledger = () => {
             }}>Patients</Typography>
           }
           </div>
-          <div className="flex flex-row py-2 w-[202px] ml-3 text-gray-600 hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px] cursor-pointer">
+          <div className={`flex flex-row py-2 w-[202px] ml-3 ${!collapsed && 
+          ' hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px]'
+        } cursor-pointer `}>
             <HealthAndSafetyOutlinedIcon fontSize="small" sx={{marginLeft: '12px'}} />
             {!collapsed && 
             <Typography variant="caption" sx={{
@@ -160,7 +166,9 @@ const ledger = () => {
             }}>Insurance</Typography>
           }
           </div>
-          <div className="flex flex-row w-[202px] py-2 ml-3 text-gray-600 hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px] cursor-pointer">
+          <div className={`flex flex-row py-2 w-[202px] ml-3 ${!collapsed && 
+          ' hover:bg-[#F1F1F1] hover:border hover:border-[#EEEEEE] hover:rounded-[20px]'
+        } cursor-pointer `}>
             <TaskAltOutlinedIcon fontSize="small" sx={{marginLeft: '12px'}} />
             {!collapsed && 
             <Typography variant="caption" sx={{
@@ -202,8 +210,8 @@ const ledger = () => {
         </div>
 
         {/* Content */}
-        <Box className="min-h-screen p-4 max-w-[1240px] mx-auto">
-          <div className="flex-1 overflow-y-auto p-4">
+        <Box className="mt-8 mb-8 max-w-[1240px] mx-auto">
+          <div className="flex-1 overflow-y-auto">
             {/* Patient Header */}
             <div className="flex items-center mb-4">
               <Avatar className="text-[32px]" sx={{
@@ -216,9 +224,9 @@ const ledger = () => {
                   <Chip
                     label="Female • 58y 10m"
                     size="small"
-                    variant="outlined"
+                    variant="filled"
                     className="ml-4 text-xs bg-[#CFE7D0] text-[#04112FB8]"
-                    sx={{ background: 'rgb(207 231 208 / var(--tw-bg-opacity, 1))' }}
+                    sx={{ background: 'rgb(207 231 208 / var(--tw-bg-opacity, 1))', border: '0px', borderColor: 'rgb(207 231 208 / var(--tw-bg-opacity, 1))' }}
                   />
                 </div>
                 <div className="flex items-center text-sm text-[#04112FB8] mt-[12px] space-x-2">
@@ -257,8 +265,8 @@ const ledger = () => {
                         ? 'ml-4'
                         : ''
                       } ${activeTab === tab
-                        ? 'text-white bg-black rounded-[20px] border-b-2 pb-0.5 border-black'
-                        : 'text-[#1C1C1C] hover:text-gray-700 bg-[#FFFFFF] rounded-[20px] border-b-2 border-[#EEEEEE]'
+                        ? 'text-white bg-black rounded-[20px] pb-0.5 border-black'
+                        : 'text-[#1C1C1C] hover:text-gray-700 bg-[#FFFFFF] rounded-[20px] border-[#EEEEEE]'
                       }`}
                     onClick={() => setActiveTab(tab)}
                   >
@@ -272,6 +280,7 @@ const ledger = () => {
             {/* Account Summary Card */}
             <Box className="flex gap-4 mt-6 relative" sx={{
               borderRadius: '16px',
+              boxShadow: 'none',
             }}>
 
 
@@ -289,7 +298,7 @@ const ledger = () => {
               </div>
 
               {/* <Paper elevation={1} className="w-64 h-full"> */}
-              <div className="bg-white shrink-0 rounded-lg shadow-md p-3 h-[100%] max-w-[240px]">
+              <div className="bg-white shrink-0 rounded-lg border p-3 h-[100%] w-[240px]">
                 <Box className="p-4 border-b rounded-sm">
                   <Typography variant="subtitle2" className="uppercase mb-2" sx={{ fontSize: '12px', fontWeight: '700', color: '#8D8D8D' }}>
                     OVERVIEW
@@ -324,7 +333,7 @@ const ledger = () => {
 
                 <Divider />
 
-                <Box className="p-4 border-b mt-1 rounded-sm">
+                <Box className="p-4 mt-1 rounded-sm">
                   <Typography variant="subtitle2" className="text-gray-500 text-xs font-medium uppercase mb-2">
                     INSURANCE ACCOUNT
                   </Typography>
@@ -347,19 +356,18 @@ const ledger = () => {
               </div>
 
               <div className='z-[1]'>
-                <Card className="min-w-64 max-w-[956px;] bg-blue-100 rounded-lg"
+                <Card className="min-w-64 max-w-[976px;] bg-blue-100 rounded-lg"
                   sx={{
-                    Width: '956px',
+                    Width: '976px',
                     height: '543px',
                     borderRadius: '16px',
-                    boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
                     border: '1px',
                   }}>
                   <div className="flex justify-between items-center mb-4 mt-6 h-[50px] w-[912px] ml-8" >
                     <div>
                       <Typography variant="subtitle1" className="text-[20px] font-bold" sx={{ fontSize: '20px', fontWeight: '700' }}>
                         [[Delta Dental of CA]] Account Summary
-                        <Chip label="Active" size="small" className="text-[#04112FBF] ml-4" sx={{ background: 'rgb(206 233 196 / var(--tw-bg-opacity, 1))', width: '74px', height: '28px' }} />
+                        <Chip label="Active" size="small" className="text-[#04112FBF] ml-4" sx={{ background: 'rgb(206 233 196 / var(--tw-bg-opacity, 1))', width: '74px', height: '28px', color: '#04112FBF' }} />
                       </Typography>
                       <Typography variant="caption" className="text-[#707070]" sx={{ fontSize: '16px', fontWeight: '500', letterSpacing: '0px', color: '#707070' }}>
                         Subscriber: [[Christopher]]
@@ -371,7 +379,7 @@ const ledger = () => {
                   {/* Summary Stats */}
                   <div className="grid grid-cols-6 gap-4 mb-8 ml-8 mt-6 w-[912px] h-[77px]">
                     <div className='w-[145px] h-[77px] rounded-2xl border' >
-                      <div className='mt-4 ml-3'>
+                      <div className='p-4'>
                         <div className="flex text-center">
                           <div className="w-[12px] h-[12px] bg-[#DAEFDC] rounded-2xl mt-[3px] ml-[6px]"></div>
                           <Typography variant="caption" className="" sx={{ color: '#626262', fontSize: '12px', fontWeight: '500', marginLeft: '6px' }}>Production</Typography>
@@ -380,7 +388,7 @@ const ledger = () => {
                       </div>
                     </div>
                     <div className='w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
-                      <div className='mt-4 ml-3'>
+                      <div className='p-4'>
                         <div className="flex text-center ml-[6px]">
                           <div className="w-[12px] h-[12px] bg-[#FDE4E1] rounded-2xl mt-[3px] ml-[6px]"></div>
                           <Typography variant="caption" className="text-gray-500" sx={{ color: '#626262', fontSize: '12px', fontWeight: '500', marginLeft: '6px' }}>Collection</Typography>
@@ -389,7 +397,7 @@ const ledger = () => {
                       </div>
                     </div>
                     <div className='w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
-                      <div className='mt-4 ml-3'>
+                      <div className='p-4'>
                         <div className="flex text-center ml-[6px]">
                           <div className="w-[12px] h-[12px] bg-[#FFF0B8] rounded-2xl mt-[3px] ml-[6px]"></div>
                           <Typography variant="caption" className="text-gray-500" sx={{ color: '#626262', fontSize: '12px', fontWeight: '500', marginLeft: '6px' }}>Adjustment</Typography>
@@ -398,7 +406,7 @@ const ledger = () => {
                       </div>
                     </div>
                     <div className='w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
-                      <div className='mt-4 ml-3'>
+                      <div className='p-4'>
                         <div className="flex text-center ml-[6px]">
                           <div className="w-[12px] h-[12px] bg-[#CFE1F3] rounded-2xl mt-[3px] ml-[6px]"></div>
                           <Typography variant="caption" className="text-gray-500" sx={{ color: '#626262', fontSize: '12px', fontWeight: '500', marginLeft: '6px' }}>A/R</Typography>
@@ -407,8 +415,8 @@ const ledger = () => {
                       </div>
                     </div>
                     <div className='w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
-                      <div className='mt-4 ml-3'>
-                        <div className="flex text-center ml-[6px]">
+                      <div className='p-4'>
+                        <div className="flex text-center ">
                           <div className="w-[12px] h-[12px] bg-[#E7DAEF] rounded-2xl mt-[3px] ml-[6px]"></div>
                           <Typography variant="caption" className="text-gray-500" sx={{ color: '#626262', fontSize: '12px', fontWeight: '500', marginLeft: '6px' }}>To be Charged</Typography>
                         </div>
@@ -416,7 +424,7 @@ const ledger = () => {
                       </div>
                     </div>
                     <div className='w-[145px] h-[77px] text-[#FFFFFF] rounded-2xl border'>
-                      <div className='mt-4 ml-3'>
+                      <div className='p-4'>
                         <div className="flex text-center ml-[6px]">
                           <div className="w-[12px] h-[12px] bg-[#FADFC5] rounded-2xl mt-[3px] ml-[6px]"></div>
                           <Typography variant="caption" className="text-gray-500" sx={{ color: '#626262', fontSize: '12px', fontWeight: '500', marginLeft: '6px' }}>Overdue</Typography>
@@ -432,12 +440,11 @@ const ledger = () => {
                 </Card>
 
                 {/* Auto Payments */}
-                <Card className="min-w-64 max-w-[956px;] bg-blue-100 rounded-lg mt-7"
+                <Card className="min-w-64 max-w-[976px;] rounded-lg mt-7"
                   sx={{
                     Width: '976px',
                     borderRadius: '16px',
-                    boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
-                    border: '1px',
+                    border: '1px #0000000A',
                   }}>
                   <div className="flex space-x-4 mb-4">
                     <AutoPayment></AutoPayment>
@@ -446,27 +453,26 @@ const ledger = () => {
 
                 {/* Action Cards */}
 
-                <div className="flex space-x-4 max-w-[956px;]" >
+                <div className="flex space-x-4 max-w-[976px;]" >
                   <ActionCard></ActionCard>
                 </div>
 
                 {/* Ledger */}
                 <Card className="rounded-lg"
                   sx={{
-                    maxWidth: '956px',
+                    maxWidth: '976px',
                     borderRadius: '16px',
-                    boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
                     border: '1px',
                   }}>
                   <div className="mb-4 mt-4">
-                    <div className="flex justify-between items-center mb-4 w-[912px]">
+                    <div className="flex justify-between items-center mb-4 w-[976px]">
                       <Typography variant="subtitle1" sx={{
                         fontSize: '20px',
                         marginLeft: '24px',
                         marginTop: '7px',
                         fontWeight: 700,
                       }}>Ledger</Typography>
-                      <div>
+                      <div className='mr-6'>
                         <Button variant="outlined" className="mr-2"
                           sx={{
                             backgroundColor: '#E0E0E0',
@@ -474,6 +480,7 @@ const ledger = () => {
                             border: '1px',
                             borderColor: '#E0E0E0',
                             borderRadius: '35px',
+                            textTransform: 'capitalize',
                           }} >Adjust</Button>
 
                         <Button variant="contained"
@@ -487,6 +494,7 @@ const ledger = () => {
                             fontWeight: '16px',
                             color: '#FFFFFF',
                             marginLeft: '8px',
+                            textTransform: 'capitalize',
                           }}>
                           Post Payment
                         </Button>

@@ -4,6 +4,7 @@ import {
   Typography, 
   Button, 
   Card, 
+  Divider, 
   CardContent, 
   IconButton, 
   Grid, 
@@ -232,9 +233,10 @@ const AutoPayments: React.FC = () => {
               </Typography>
             </DateBoxEnd>
           </DateSection>
+          <Divider />
           
-          <PaymentsFooter >
-            <Typography variant="body2" fontWeight={500} sx={{fontSize: '12px', marginLeft: '140px',marginBottom: '4px'}}>
+          <PaymentsFooter sx={{marginTop: '3px'}}>
+            <Typography variant="body2" fontWeight={500} sx={{fontSize: '12px', marginLeft: '140px',marginBottom: '16px'}}>
               {subscription.paymentsDone} Payments Done
             </Typography>
             <IconButton 
@@ -243,6 +245,7 @@ const AutoPayments: React.FC = () => {
                 color: 'inherit', 
                 backgroundColor: 'rgba(255, 255, 255, 0.15)',
                 width: 24,
+                marginBottom: '12px',
                 height: 24
               }}
             >
@@ -261,7 +264,6 @@ const AutoPayments: React.FC = () => {
               borderRadius: '31.42px',
               transform: 'translateY(-50%)',
               bgcolor: 'white',
-              boxShadow: '0 0 10px rgba(0,0,0,0.1)',
               '&:hover': {
                 bgcolor: 'white',
               }
@@ -276,10 +278,10 @@ const AutoPayments: React.FC = () => {
   };
 
   return (
-    <Box sx={{bgcolor: 'white', width: '956px',  height: '280px' }}>
+    <Box sx={{bgcolor: 'white', width: '976px',  height: '280px' }}>
       <Container>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', marginLeft: '2px'}}>
-          <Typography variant="h6" fontWeight={600} sx={{color: '#1C1C1C', fontSize: '20px'}}>
+          <Typography variant="h6" fontWeight={600} sx={{color: '#1C1C1C', fontSize: '20px', textTransform: 'capitalize'}}>
             Auto Payments
           </Typography>
           <Button 
@@ -291,6 +293,7 @@ const AutoPayments: React.FC = () => {
               color: '#FFFFFF',
               fontWeight: 500,
               borderRadius: '35px',
+              textTransform: 'capitalize',
               '&:hover': {
                 bgcolor: '#333'
               }
@@ -300,8 +303,8 @@ const AutoPayments: React.FC = () => {
           </Button>
         </Box>
         
-        <Box sx={{ position: 'relative', width:'960px', height: '184px', marginTop: '16px' }}>
-          <Grid container spacing={1}>
+        <Box sx={{ position: 'relative', width:'976px', height: '184px', marginTop: '16px' }}>
+          <Grid container sx={{gap: '16px'}}>
             {subscriptions.map((subscription) => (
               <Grid key={subscription.id}>
                 {renderCard(subscription)}

@@ -91,7 +91,7 @@ function createData(
         <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={10}>
             <Collapse in={open} timeout="auto" unmountOnExit>
-              <Box sx={{ margin: 1, width: '908px', boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)' }}>
+              <Box sx={{ margin: 1, width: '908px'}}>
                 <Table size="small" aria-label="purchases">
                   <TableBody>
                     {row.subDescription.map((historyRow) => (

@@ -24,9 +24,8 @@ interface MenuItemProps {
 // Styled components
 const StyledCard = styled(Card)(() => ({
   borderRadius: '12px',
-  boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
   height: '88px',
-  width: '467px',
+  width: '477px',
   transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
   cursor: 'pointer',
   '&:hover': {
