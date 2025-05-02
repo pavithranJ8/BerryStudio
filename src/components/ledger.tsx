@@ -98,7 +98,7 @@ const ledger = () => {
   return (
     <div className="flex h-screen bg-[#FFFFFF]">
       {/* Sidebar */}
-      <div className={`shrink-0 h-screen shadow-md flex flex-col  ${
+      <div className={`fixed shrink-0 h-screen shadow-md flex flex-col  ${
           collapsed ? 'w-16' : 'w-64'
         }`}>
         <div className="mb-8 mt-4 ml-6">
@@ -187,7 +187,9 @@ const ledger = () => {
 
       {/* Main Content */}
 
-      <div className="flex-1 bg-gradient-to-b from-[#E0F1E1] via-[#FAFDFA] to-[#FAFAFB]">
+      <div className={`flex-1 bg-gradient-to-b from-[#E0F1E1] via-[#FAFDFA] to-[#FAFAFB] ${
+          collapsed ? 'ml-16' : 'ml-64'
+        }`}>
         {/* Header */}
         <div className="h-14 w-full shadow-sm px-4 flex items-center justify-between">
           <div className="flex items-center mb-2 mt-2">
@@ -210,7 +212,7 @@ const ledger = () => {
         </div>
 
         {/* Content */}
-        <Box className="mt-8 mb-8 max-w-[1240px] mx-auto">
+        <div className="mt-8 mb-8 max-w-[1240px] mx-auto">
           <div className="flex-1 overflow-y-auto">
             {/* Patient Header */}
             <div className="flex items-center mb-4">
@@ -444,7 +446,10 @@ const ledger = () => {
                   sx={{
                     Width: '976px',
                     borderRadius: '16px',
-                    border: '1px #0000000A',
+                    border: '1px',
+                    borderColor: '#0000000A',
+                    borderBlockStyle: 'inherit'
+                    // border-block-style: inherit;
                   }}>
                   <div className="flex space-x-4 mb-4">
                     <AutoPayment></AutoPayment>
@@ -463,6 +468,8 @@ const ledger = () => {
                     maxWidth: '976px',
                     borderRadius: '16px',
                     border: '1px',
+                    borderColor: '#0000000A',
+                    borderBlockStyle: 'inherit'
                   }}>
                   <div className="mb-4 mt-4">
                     <div className="flex justify-between items-center mb-4 w-[976px]">
@@ -509,7 +516,7 @@ const ledger = () => {
               {/* </Paper> */}
             </Box>
           </div>
-        </Box>
+        </div>
       </div>
 
     </div>

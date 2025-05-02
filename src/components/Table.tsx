@@ -127,7 +127,7 @@ function createData(
 
   export default function CollapsibleTable() {
     return (
-      <TableContainer component={Paper} sx={{maxWidth: '956px'}}>
+      <TableContainer component={Paper} sx={{maxWidth: '976px'}}>
         <Table aria-label="collapsible table">
           <TableHead sx={{background: '#FBFBFC'}}>
             <TableRow>

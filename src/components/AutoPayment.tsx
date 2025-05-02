@@ -17,7 +17,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 // import PaymentIcon from '@mui/icons-material/Payment';
 
 const BlueCard = styled(Card)(() => ({
-  backgroundColor: '#4b89c0',
+  backgroundColor: '#528DC1',
   color: 'white',
   borderRadius: '10px',
   height: '100%',
@@ -26,7 +26,7 @@ const BlueCard = styled(Card)(() => ({
 }));
 
 const DarkCard = styled(Card)(() => ({
-  backgroundColor: '#3c3c3c',
+  backgroundColor: '#3C3C3C',
   color: 'white',
   borderRadius: '10px',
   height: '100%',
@@ -35,7 +35,7 @@ const DarkCard = styled(Card)(() => ({
 }));
 
 const YellowCard = styled(Card)(() => ({
-  backgroundColor: '#f0d895',
+  backgroundColor: '#FFF0B8',
   color: 'black',
   borderRadius: '10px',
   height: '100%',
@@ -47,7 +47,7 @@ const YellowCard = styled(Card)(() => ({
 const ActiveBadge = styled(Box)(() => ({
   backgroundColor: '#d8f1d8',
   color: '#2e7d32',
-  padding: '2px 8px',
+  padding: '0px 8px',
   borderRadius: '12px',
   fontSize: '0.75rem',
   fontWeight: 600,
@@ -165,7 +165,7 @@ const AutoPayments: React.FC = () => {
     return (
       <CardComponent sx={{ height: '184px', width: '304px', borderRadius: '16px' }}>
         <CardContent sx={{ height: '100%', display: 'flex', flexDirection: 'column', marginBottom: '12px' }}>
-          {subscription.active && <ActiveBadge className='mr-4 mt-1 px-1 w-[50px] h-[20px] text-[10px] '>Active</ActiveBadge>}
+          {subscription.active && <ActiveBadge className='mr-4 mt-1 pl-2 w-[50px] h-[20px] text-[10px] '>Active</ActiveBadge>}
 
           {/* <IconButton
             sx={{
@@ -233,7 +233,7 @@ const AutoPayments: React.FC = () => {
               </Typography>
             </DateBoxEnd>
           </DateSection>
-          <Divider />
+          <Divider sx={{borderColor: subscription.type == 'yellow' ? '#747474' : '#cdb2b2c2', marginLeft: '-15px', marginRight: '-15px'}}/>
           
           <PaymentsFooter sx={{marginTop: '3px'}}>
             <Typography variant="body2" fontWeight={500} sx={{fontSize: '12px', marginLeft: '140px',marginBottom: '16px'}}>
@@ -278,7 +278,7 @@ const AutoPayments: React.FC = () => {
   };
 
   return (
-    <Box sx={{bgcolor: 'white', width: '976px',  height: '280px' }}>
+    <Box sx={{bgcolor: '#FFFFFF', width: '976px',  height: '280px' }}>
       <Container>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', marginLeft: '2px'}}>
           <Typography variant="h6" fontWeight={600} sx={{color: '#1C1C1C', fontSize: '20px', textTransform: 'capitalize'}}>
