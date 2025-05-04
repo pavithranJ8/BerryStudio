@@ -60,7 +60,7 @@ function createData(
   
     return (
       <React.Fragment>
-        <TableRow sx={{ '& > *': { borderBottom: 'unset' }, background: '#FBFBFC' }} >
+        <TableRow sx={{ '& > *': { borderBottom: 'unset' }, background: '#FFFFFF' }} >
           <TableCell>
             <IconButton
               aria-label="expand row"
@@ -91,8 +91,8 @@ function createData(
         <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={10}>
             <Collapse in={open} timeout="auto" unmountOnExit>
-              <Box sx={{ margin: 1, width: '908px'}}>
-                <Table size="small" aria-label="purchases">
+              <Box sx={{ margin: 1, width: '925px', background: '#FAFAFA', boxShadow: 'none'}}>
+                <Table size="small" aria-label="purchases" sx={{background: '#FAFAFA'}}>
                   <TableBody>
                     {row.subDescription.map((historyRow) => (
                       <TableRow key={historyRow.id}>
@@ -155,7 +155,7 @@ function createData(
               </Typography></TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody >
             {rows.map((row) => (
               <Row key={row.id} row={row} />
             ))}

@@ -89,7 +89,7 @@ import {
     },
   };
   return (
-    <Box className="h-64 mb-4">
+    <Box className="h-64 mb-4" sx={{boxShadow: 'none'}}>
     <Bar options={chartOptions} data={chartData} />
   </Box>
   );

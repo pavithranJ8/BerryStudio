@@ -98,7 +98,7 @@ const ledger = () => {
   return (
     <div className="flex h-screen bg-[#FFFFFF]">
       {/* Sidebar */}
-      <div className={`fixed shrink-0 h-screen shadow-md flex flex-col  ${
+      <div className={`fixed shrink-0 h-screen flex flex-col  ${
           collapsed ? 'w-16' : 'w-64'
         }`}>
         <div className="mb-8 mt-4 ml-6">
@@ -187,7 +187,7 @@ const ledger = () => {
 
       {/* Main Content */}
 
-      <div className={`flex-1 bg-gradient-to-b from-[#E0F1E1] via-[#FAFDFA] to-[#FAFAFB] ${
+      <div className={`flex-1 h-[280vh] bg-gradient-to-b from-[#E0F1E1] via-[#FAFDFA] to-[#FAFAFB]  ${
           collapsed ? 'ml-16' : 'ml-64'
         }`}>
         {/* Header */}
@@ -301,7 +301,7 @@ const ledger = () => {
 
               {/* <Paper elevation={1} className="w-64 h-full"> */}
               <div className="bg-white shrink-0 rounded-lg border p-3 h-[100%] w-[240px]">
-                <Box className="p-4 border-b rounded-sm">
+                <Box className="p-4 border-b rounded-sm" sx={{boxShadow: 'none'}}>
                   <Typography variant="subtitle2" className="uppercase mb-2" sx={{ fontSize: '12px', fontWeight: '700', color: '#8D8D8D' }}>
                     OVERVIEW
                   </Typography>
@@ -313,7 +313,7 @@ const ledger = () => {
 
                 <Divider />
 
-                <Box className="p-4 border-b mt-1 rounded-sm">
+                <Box className="p-4 border-b mt-1 rounded-sm" sx={{boxShadow: 'none'}}>
                   <Typography variant="subtitle2" className="uppercase mb-2" sx={{ fontSize: '12px', fontWeight: '700', color: '#8D8D8D' }}>
                     PATIENT ACCOUNT
                   </Typography>
@@ -335,7 +335,7 @@ const ledger = () => {
 
                 <Divider />
 
-                <Box className="p-4 mt-1 rounded-sm">
+                <Box className="p-4 mt-1 rounded-sm" sx={{boxShadow: 'none'}}>
                   <Typography variant="subtitle2" className="text-gray-500 text-xs font-medium uppercase mb-2">
                     INSURANCE ACCOUNT
                   </Typography>
@@ -364,6 +364,7 @@ const ledger = () => {
                     height: '543px',
                     borderRadius: '16px',
                     border: '1px',
+                    boxShadow: 'none'
                   }}>
                   <div className="flex justify-between items-center mb-4 mt-6 h-[50px] w-[912px] ml-8" >
                     <div>
@@ -448,7 +449,8 @@ const ledger = () => {
                     borderRadius: '16px',
                     border: '1px',
                     borderColor: '#0000000A',
-                    borderBlockStyle: 'inherit'
+                    borderBlockStyle: 'inherit',
+                    boxShadow: 'none'
                     // border-block-style: inherit;
                   }}>
                   <div className="flex space-x-4 mb-4">
@@ -463,13 +465,14 @@ const ledger = () => {
                 </div>
 
                 {/* Ledger */}
-                <Card className="rounded-lg"
+                <Card className="rounded-2xl"
                   sx={{
                     maxWidth: '976px',
                     borderRadius: '16px',
                     border: '1px',
                     borderColor: '#0000000A',
-                    borderBlockStyle: 'inherit'
+                    borderBlockStyle: 'inherit',
+                    boxShadow: 'none'
                   }}>
                   <div className="mb-4 mt-4">
                     <div className="flex justify-between items-center mb-4 w-[976px]">

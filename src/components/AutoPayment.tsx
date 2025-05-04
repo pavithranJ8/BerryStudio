@@ -278,9 +278,9 @@ const AutoPayments: React.FC = () => {
   };
 
   return (
-    <Box sx={{bgcolor: '#FFFFFF', width: '976px',  height: '280px' }}>
+    <Box sx={{bgcolor: '#FFFFFF', width: '976px',  height: '280px', boxShadow: 'none' }}>
       <Container>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', marginLeft: '2px'}}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', marginLeft: '2px', boxShadow: 'none'}}>
           <Typography variant="h6" fontWeight={600} sx={{color: '#1C1C1C', fontSize: '20px', textTransform: 'capitalize'}}>
             Auto Payments
           </Typography>
@@ -303,7 +303,7 @@ const AutoPayments: React.FC = () => {
           </Button>
         </Box>
         
-        <Box sx={{ position: 'relative', width:'976px', height: '184px', marginTop: '16px' }}>
+        <Box sx={{ position: 'relative', width:'976px', height: '184px', marginTop: '16px', boxShadow: 'none' }}>
           <Grid container sx={{gap: '16px'}}>
             {subscriptions.map((subscription) => (
               <Grid key={subscription.id}>
