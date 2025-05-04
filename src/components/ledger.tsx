@@ -187,8 +187,8 @@ const ledger = () => {
 
       {/* Main Content */}
 
-      <div className={`flex-1 h-[280vh] bg-gradient-to-b from-[#E0F1E1] via-[#FAFDFA] to-[#FAFAFB]  ${
-          collapsed ? 'ml-16' : 'ml-64'
+      <div className={`flex-1 bg-gradient-to-b from-[#E0F1E1] via-[#FAFDFA] to-[#FAFAFB]  ${
+          collapsed ? 'ml-16 min-h-[285vh]' : 'ml-64 min-h-[420vh]'
         }`}>
         {/* Header */}
         <div className="h-14 w-full shadow-sm px-4 flex items-center justify-between">
