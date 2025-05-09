@@ -26,8 +26,7 @@ const StyledCard = styled(Card)(() => ({
   borderRadius: '12px',
   height: '88px',
   width: '477px',
-  border: '1px',
-  borderColor: '#0000000A',
+  border: '1px solid rgba(0, 0, 0, 0.04)',
   transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
   cursor: 'pointer',
   '&:hover': {

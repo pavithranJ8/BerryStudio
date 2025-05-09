@@ -92,10 +92,10 @@ function Row(props: { row: any, openInPopup: (item: any) => void, removeLedgerDa
           </Typography>
         </TableCell>
         <TableCell align="right" sx={{ color: '#1C1C1C', fontWeight: '500', fontSize: '14px' }}>{row.total_amount ? row.total_amount : '-'}</TableCell>
-        <TableCell align="right" sx={{ color: '#1C1C1C', fontWeight: '400', fontSize: '14px' }}>{row.adjustment}</TableCell>
-        <TableCell align="right" sx={{ color: '#1C1C1C', fontWeight: '400', fontSize: '14px' }}>{row.charges}</TableCell>
-        <TableCell align="right" sx={{ color: '#1C1C1C', fontWeight: '400', fontSize: '14px' }}>{row.payment}</TableCell>
-        <TableCell align="right" sx={{ color: '#1C1C1C', fontWeight: '400', fontSize: '14px' }}>{row.balance}</TableCell>
+        <TableCell align="right" sx={{ color: '#1C1C1C', fontWeight: '400', fontSize: '14px' }}>{row.adjustment ? row.adjustment : '-'}</TableCell>
+        <TableCell align="right" sx={{ color: '#1C1C1C', fontWeight: '400', fontSize: '14px' }}>{row.charges ? row.charges : '-'}</TableCell>
+        <TableCell align="right" sx={{ color: '#1C1C1C', fontWeight: '400', fontSize: '14px' }}>{row.payment ? row.payment : '-'}</TableCell>
+        <TableCell align="right" sx={{ color: '#1C1C1C', fontWeight: '400', fontSize: '14px' }}>{row.balance ? row.balance : '-'}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={10}>
@@ -110,11 +110,11 @@ function Row(props: { row: any, openInPopup: (item: any) => void, removeLedgerDa
                           Reference Number
                         </Typography>
                         {row.reference_no}</TableCell>
-                      <TableCell>  <Typography variant="body2" sx={{ fontSize: '12px', fontWeight: '400', color: '#747474', marginTop: '2px' }}>
+                      <TableCell>  <Typography variant="body2" sx={{ fontSize: '12px', fontWeight: '400', color: '#747474', marginTop: '2px', width: '500px'}}>
                         Notes
                       </Typography> {row.notes}</TableCell>
                       <TableCell><EditOutlinedIcon onClick={() => { openInPopup(row) }}></EditOutlinedIcon>
-                       <DeleteOutlineOutlinedIcon onClick={() => { removeLedgerData(row) }}></DeleteOutlineOutlinedIcon></TableCell>
+                       <DeleteOutlineOutlinedIcon onClick={() => { removeLedgerData(row) }} sx={{color: "red"}}></DeleteOutlineOutlinedIcon></TableCell>
                     </TableRow>
                   {/* ))} */}
                 </TableBody>
