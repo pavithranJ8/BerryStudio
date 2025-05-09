@@ -62,7 +62,7 @@ function createData(
   };
 }
 
-function Row(props: { row: ReturnType<typeof createData>, openInPopup: (item: any) => void, removeLedgerData: (item: any) => void }) {
+function Row(props: { row: any, openInPopup: (item: any) => void, removeLedgerData: (item: any) => void }) {
   const { row, openInPopup, removeLedgerData  } = props;
   // console.log(row,'row');
   const [open, setOpen] = React.useState(false);
@@ -163,7 +163,7 @@ export default function CollapsibleTable() {
        
       //  console.log(ledgerdata,'ledgerdata')
     }else{
-    const oldData = JSON.parse(sessionStorage.getItem('ledgerdata')) || [];
+    const oldData = JSON.parse(sessionStorage.getItem('ledgerdata') ?? '[]') || [];
     const parsedOldData = [...oldData, ledgerdata]
     // console.log(parsedOldData,'parsedOldData');
     sessionStorage.setItem('ledgerdata', JSON.stringify(parsedOldData))
@@ -174,8 +174,8 @@ export default function CollapsibleTable() {
 }
 
 React.useEffect(() => {
-  const oldData = JSON.parse(sessionStorage.getItem('ledgerdata'));
-  // console.log(oldData,'oldData')
+  const oldData = JSON.parse(sessionStorage.getItem('ledgerdata') ?? '[]');
+  console.log(oldData,'oldData')
   if(oldData){
   setLedgerData(oldData)
   }
@@ -189,7 +189,7 @@ const openInPopup = (item: any) => {
 
 const removeLedgerData = (item: any) => {
   // console.log(item,'item')
-  let allLedgerData = ledgerData;
+  const allLedgerData = ledgerData;
   const LedgerDataSet = allLedgerData.filter(a => a.id !== item.id);
   // console.log(LedgerDataSet,'LedgerDataSet')
    sessionStorage.setItem('ledgerdata', JSON.stringify(LedgerDataSet));
@@ -265,7 +265,7 @@ const removeLedgerData = (item: any) => {
             </TableRow>
           </TableHead>
           <TableBody >
-            {ledgerData.map((row) => (
+            {ledgerData && ledgerData.map((row) => (
               <Row row={row} key={row.id}  openInPopup={openInPopup} removeLedgerData={removeLedgerData} />
             ))}
           </TableBody>

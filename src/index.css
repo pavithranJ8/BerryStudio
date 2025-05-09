@@ -14,9 +14,10 @@ input[type="number"] {
 
 body {
   background: linear-gradient(to bottom,#E0F1E1, #FAFDFA, #FAFAFB);
-  height: 100vh;
+  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow-y: auto;
 }
 
 

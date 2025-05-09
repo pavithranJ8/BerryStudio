@@ -188,7 +188,7 @@ const ledger = () => {
 
       {/* Main Content */}
 
-      <div className={`flex-1   ${
+      <div className={`flex-1 overflow-y-auto  ${
           collapsed ? 'ml-16' : 'ml-64'
         }`}>
         {/* Header */}
