@@ -141,15 +141,15 @@ export default function CollapsibleTable() {
   const [openPopup, setOpenPopup] = React.useState(false)
   const [recordForEdit, setRecordForEdit] = React.useState(null)
   const [ledgerData, setLedgerData] = React.useState<any[]>([])
-  const oldData = sessionStorage.getItem('ledgerdata');
+  // const oldData = sessionStorage.getItem('ledgerdata');
     // console.log(JSON.parse(oldData),'oldData');
 
-  const addOrEdit = (ledgerdata, isEdited) => {
+  const addOrEdit = (ledgerdata: any, isEdited: any) => {
 
     if(isEdited == 'Edit') {
-       let allLedgerData = ledgerData;
+       const allLedgerData = ledgerData;
           //  console.log(allLedgerData,'allLedgerData')
-       let recordIndex = allLedgerData.findIndex(x => x.id == ledgerdata.id);
+       const recordIndex = allLedgerData.findIndex(x => x.id == ledgerdata.id);
           //  console.log(recordIndex,'recordIndex')
    
        if (recordIndex !== -1) {
