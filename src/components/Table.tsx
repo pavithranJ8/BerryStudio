@@ -20,47 +20,47 @@ import Dialog from '../components/Dialog';
 import AutoPaymentAdd from '../components/AutoPaymentAdd'
 
 
-function createData(
-  transaction_date: Date,
-  transaction_type: string,
-  description: string,
-  day: string,
-  total_amount: number,
-  adjustment: number,
-  charges: number,
-  charges_plus_payment: number,
-  balance: number,
-  id: number,
-  reference_no: string,
-  Note: string,
-) {
-  return {
-    transaction_date,
-    transaction_type,
-    description,
-    day,
-    total_amount,
-    adjustment,
-    charges,
-    charges_plus_payment,
-    balance,
-    id,
-    reference_no,
-    Note,
-    // subDescription: [
-    //   {
-    //     reference_no: 'XXXX-XXXX-7898',
-    //     Note: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    //     id: 1,
-    //   },
-      // {
-      //   reference_no: 'XXXX-XXXX-7898',
-      //   Note: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      //   amount: 1,
-      // },
-    // ],
-  };
-}
+// function createData(
+//   transaction_date: Date,
+//   transaction_type: string,
+//   description: string,
+//   day: string,
+//   total_amount: number,
+//   adjustment: number,
+//   charges: number,
+//   charges_plus_payment: number,
+//   balance: number,
+//   id: number,
+//   reference_no: string,
+//   Note: string,
+// ) {
+//   return {
+//     transaction_date,
+//     transaction_type,
+//     description,
+//     day,
+//     total_amount,
+//     adjustment,
+//     charges,
+//     charges_plus_payment,
+//     balance,
+//     id,
+//     reference_no,
+//     Note,
+//     // subDescription: [
+//     //   {
+//     //     reference_no: 'XXXX-XXXX-7898',
+//     //     Note: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//     //     id: 1,
+//     //   },
+//       // {
+//       //   reference_no: 'XXXX-XXXX-7898',
+//       //   Note: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//       //   amount: 1,
+//       // },
+//     // ],
+//   };
+// }
 
 function Row(props: { row: any, openInPopup: (item: any) => void, removeLedgerData: (item: any) => void }) {
   const { row, openInPopup, removeLedgerData  } = props;
