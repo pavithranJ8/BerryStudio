@@ -4,7 +4,7 @@ import AutoPayment from '../components/AutoPayment'
 import ActionCard from '../components/ActionCard'
 import Barchart from '../components/BarChart';
 import {
-  Box, Typography, Avatar, Chip, Button,
+  Box, Typography, Avatar, Chip,
   IconButton, Divider, ListItemText, List,
   ListItem, Card, Badge
 } from '@mui/material';
@@ -40,7 +40,7 @@ interface RelatedParty {
 const ledger = () => {
   const [activeTab, setActiveTab] = useState('Ledger');
   const [collapsed, setCollapsed] = useState(false);
-  const [openPopup, setOpenPopup] = useState(false)
+  // const [openPopup, setOpenPopup] = useState(false)
   // const [autoCollapse, setAutoCollapse] = useState(false);
   // const [activePage, setActivePage] = useState(1);
 

@@ -182,12 +182,12 @@ React.useEffect(() => {
 }, []) 
 
 
-const openInPopup = (item) => {
+const openInPopup = (item: any) => {
   setRecordForEdit(item)
   setOpenPopup(true)
 }
 
-const removeLedgerData = (item) => {
+const removeLedgerData = (item: any) => {
   // console.log(item,'item')
   let allLedgerData = ledgerData;
   const LedgerDataSet = allLedgerData.filter(a => a.id !== item.id);

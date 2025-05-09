@@ -20,7 +20,7 @@ type FormErrors = {
   [key in keyof FormData]?: string;
 };
 
-export default function ContactForm(props) {
+export default function ContactForm(props: any) {
 
   const { addOrEdit, recordForEdit } = props
 
@@ -132,7 +132,7 @@ export default function ContactForm(props) {
     //  console.log(finalSet,'finalSet');
     //  return
     
-    // if (validateForm()) {
+    if (validateForm()) {
       setIsSubmitting(true);
 
       addOrEdit(finalSet, isEdited);
@@ -156,7 +156,7 @@ export default function ContactForm(props) {
         
         });
       
-    // }
+    }
   };
   
 
