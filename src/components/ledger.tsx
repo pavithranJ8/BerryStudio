@@ -40,6 +40,7 @@ interface RelatedParty {
 const ledger = () => {
   const [activeTab, setActiveTab] = useState('Ledger');
   const [collapsed, setCollapsed] = useState(false);
+  const [openPopup, setOpenPopup] = useState(false)
   // const [autoCollapse, setAutoCollapse] = useState(false);
   // const [activePage, setActivePage] = useState(1);
 
@@ -96,9 +97,9 @@ const ledger = () => {
 
 
   return (
-    <div className="flex h-screen bg-[#FFFFFF]">
+    <div className="flex h-screen">
       {/* Sidebar */}
-      <div className={`fixed shrink-0 h-screen flex flex-col  ${
+      <div className={`fixed shrink-0 h-screen flex flex-col bg-[#ffffff] border-r-[#0000000A]  ${
           collapsed ? 'w-16' : 'w-64'
         }`}>
         <div className="mb-8 mt-4 ml-6">
@@ -187,8 +188,8 @@ const ledger = () => {
 
       {/* Main Content */}
 
-      <div className={`flex-1 bg-gradient-to-b from-[#E0F1E1] via-[#FAFDFA] to-[#FAFAFB]  ${
-          collapsed ? 'ml-16 min-h-[285vh]' : 'ml-64 min-h-[420vh]'
+      <div className={`flex-1   ${
+          collapsed ? 'ml-16' : 'ml-64'
         }`}>
         {/* Header */}
         <div className="h-14 w-full shadow-sm px-4 flex items-center justify-between">
@@ -474,8 +475,8 @@ const ledger = () => {
                     borderBlockStyle: 'inherit',
                     boxShadow: 'none'
                   }}>
-                  <div className="mb-4 mt-4">
-                    <div className="flex justify-between items-center mb-4 w-[976px]">
+                  {/* <div className="mb-4 mt-4"> */}
+                    {/* <div className="flex justify-between items-center mb-4 w-[976px]">
                       <Typography variant="subtitle1" sx={{
                         fontSize: '20px',
                         marginLeft: '24px',
@@ -494,6 +495,7 @@ const ledger = () => {
                           }} >Adjust</Button>
 
                         <Button variant="contained"
+                           onClick={() => { setOpenPopup(true)}}
                           sx={{
                             backgroundColor: '#171717',
                             '&:hover': {
@@ -509,10 +511,10 @@ const ledger = () => {
                           Post Payment
                         </Button>
                       </div>
-                    </div>
+                    </div> */}
 
                     <Table></Table>
-                  </div>
+                  {/* </div> */}
                 </Card>
 
               </div>

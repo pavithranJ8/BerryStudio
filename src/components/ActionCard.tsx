@@ -26,11 +26,13 @@ const StyledCard = styled(Card)(() => ({
   borderRadius: '12px',
   height: '88px',
   width: '477px',
+  border: '1px',
+  borderColor: '#0000000A',
   transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
   cursor: 'pointer',
   '&:hover': {
     transform: 'translateY(-2px)',
-    // boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+   boxShadow: '0 4px 12px #142D6E05',
   },
 }));
 
@@ -56,6 +58,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ icon, title, description, showArrow
         display: 'flex',
         alignItems: 'center',
         border: '1px',
+        boxShadow: 'none',
         // padding: '16px',
         marginLeft: '10px',
         '&:last-child': { paddingBottom: '16px' }
@@ -106,7 +109,7 @@ const MenuCards: React.FC = () => {
       
       <div className='flex items-start space-x-[19px]'>
         {menuItems.map((item, index) => (
-         <div className='ml-[-24px] border rounded-3xl border-[#0000000A]' key={index}>
+         <div className='ml-[-24px] border-[#0000000A] rounded-3xl border' key={index}>
             <MenuItem
               icon={item.icon}
               title={item.title}

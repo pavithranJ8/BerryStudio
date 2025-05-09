@@ -2,7 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+body {
+  background: linear-gradient(to bottom,#E0F1E1, #FAFDFA, #FAFAFB);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 
 
