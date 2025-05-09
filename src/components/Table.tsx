@@ -140,7 +140,7 @@ export default function CollapsibleTable() {
 
   const [openPopup, setOpenPopup] = React.useState(false)
   const [recordForEdit, setRecordForEdit] = React.useState(null)
-  const [ledgerData, setLedgerData] = React.useState([])
+  const [ledgerData, setLedgerData] = React.useState<any[]>([])
   const oldData = sessionStorage.getItem('ledgerdata');
     // console.log(JSON.parse(oldData),'oldData');
 
